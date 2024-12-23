@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://b54p1syppt5qr"]
+
+[ext_resource type="Script" path="res://Scripts/Constructions/arrow_tower.gd" id="1_oi8xc"]
+[ext_resource type="Texture2D" uid="uid://ck1ur7s0bce2h" path="res://Assets/Towers.png" id="2_vqkqd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qta1m"]
+size = Vector2(22, 38)
+
+[node name="ArrowTower" type="StaticBody2D"]
+collision_layer = 8
+collision_mask = 0
+script = ExtResource("1_oi8xc")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+position = Vector2(0, -24)
+texture = ExtResource("2_vqkqd")
+hframes = 3
+frame = 2
+
+[node name="Collision" type="CollisionShape2D" parent="."]
+position = Vector2(0, -19)
+shape = SubResource("RectangleShape2D_qta1m")
+
+[node name="Point" type="Marker2D" parent="."]
+position = Vector2(0, -34)

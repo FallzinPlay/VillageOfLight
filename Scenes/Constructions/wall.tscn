@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://b8lwxig2lr6un"]
+
+[ext_resource type="Script" path="res://Scripts/Constructions/wall.gd" id="1_prabk"]
+[ext_resource type="Texture2D" uid="uid://ck1ur7s0bce2h" path="res://Assets/Towers.png" id="2_ypc5i"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dhn2k"]
+size = Vector2(24, 30)
+
+[node name="Wall" type="StaticBody2D"]
+collision_layer = 8
+collision_mask = 0
+script = ExtResource("1_prabk")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+position = Vector2(1, -22)
+texture = ExtResource("2_ypc5i")
+hframes = 3
+
+[node name="Collision" type="CollisionShape2D" parent="."]
+position = Vector2(1, -15)
+shape = SubResource("RectangleShape2D_dhn2k")
